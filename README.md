@@ -1,66 +1,88 @@
 # retail-consumer-behavior-analysis-davimaia-felipe
 # Sistema de Recomendação para Varejo
 
-## 1. Problema
+## Contexto
 
-Em ambientes de varejo, principalmente no e-commerce, os clientes se deparam com uma grande quantidade de produtos. Isso pode dificultar a escolha e acabar reduzindo as chances de compra.
+O projeto simula um cenário de varejo com 10 milhões de clientes e um orçamento de R$50.000 por mês.
 
-Além disso, muitas plataformas não oferecem recomendações personalizadas, fazendo com que todos os usuários vejam praticamente as mesmas opções, o que torna a experiência menos eficiente.
+A ideia é entender como um sistema de recomendação poderia funcionar nesse contexto.
 
-## 2. Objetivo
+---
 
-O objetivo deste projeto é analisar dados de compras de clientes e identificar padrões de comportamento que possam ser usados para recomendar produtos.
+## Problema
 
-A ideia não é criar um sistema complexo de inteligência artificial, mas sim simular como um sistema de recomendação pode funcionar a partir de análises simples de dados.
+No varejo, principalmente online, existem muitos produtos disponíveis. Isso pode dificultar a escolha do cliente e diminuir as chances de compra.
 
-## 3. Dados
+Além disso, sem recomendação, todos os usuários acabam vendo praticamente as mesmas coisas.
 
-O dataset utilizado contém informações sobre compras realizadas por clientes, incluindo:
+---
 
-- Produto comprado (Item Purchased)
-- Categoria (Category)
-- Valor da compra (Purchase Amount)
+## Objetivo
+
+O objetivo foi analisar dados de compras e criar uma forma simples de recomendar produtos.
+
+Não foi usado machine learning, a ideia foi simular o funcionamento de um sistema de recomendação usando regras.
+
+---
+
+## Dados
+
+Foi usado um dataset com informações de compras, contendo:
+
+- produto comprado  
+- categoria  
+- valor  
+- frequência de compras  
+- idade e gênero  
 
 Cada linha representa uma compra.
 
-## 4. Abordagem
+---
 
-O desenvolvimento do projeto foi feito em etapas:
+## Arquitetura (simples)
 
-Primeiro, foi feita uma exploração inicial dos dados para entender sua estrutura.
+Fluxo básico:
 
-Em seguida, foram analisados os produtos e categorias mais frequentes.
+cliente → sistema → recomendação
 
-Por fim, foram buscados padrões de comportamento, principalmente produtos que costumam ser comprados juntos.
+O sistema recebe o produto comprado e retorna uma sugestão com base em regras.
 
-## 5. Principais insights
+----
 
-A análise revelou alguns padrões interessantes:
+## Análise
 
-- Produtos como camisetas e jeans aparecem com muita frequência
-- A categoria de roupas é a mais dominante
-- Os clientes tendem a comprar produtos em conjunto, e não de forma isolada
+Durante a análise, foi possível observar que:
 
-## 6. Lógica de recomendação
+- a categoria "Clothing" aparece mais que as outras  
+- produtos como Blouse, Pants e Jewelry aparecem com frequência  
+- os clientes já têm histórico de compras (não são iniciantes)  
+- o ticket médio ficou em torno de 60 dólares  
 
-Com base nos padrões encontrados, é possível criar regras simples de recomendação.
+-----
 
-Por exemplo:
+## Recomendação
 
-- Clientes que compram tênis tendem a comprar meias
-- Clientes que compram camisetas tendem a comprar jeans
-- Clientes que compram vestidos tendem a comprar acessórios
+Como o dataset não mostra produtos comprados juntos, a recomendação foi feita com base em lógica simples.
 
-Essas relações podem ser utilizadas para sugerir produtos de forma mais relevante.
+Exemplos:
 
-## 7. Impacto no negócio
+- Blouse → Jewelry  
+- Pants → Belt  
+- Dress → Jewelry  
+- Sweater → Scarf  
+- Sandals → Socks  
 
-Mesmo com uma abordagem simples, esse tipo de análise pode gerar benefícios como:
+-------
+## Custo
 
-- aumento do número de itens por compra
-- melhora na experiência do usuário
-- maior facilidade na descoberta de produtos
+Orçamento: R$50.000 por mês  
+Clientes: 10.000.000  
 
-## 8. Conclusão
+Custo por cliente ≈ R$0,005 por mês  
 
-Este projeto mostra que, mesmo com análises simples, já é possível extrair informações valiosas sobre o comportamento dos clientes e simular um sistema de recomendação eficiente.
+-------
+## Conclusão
+
+O projeto mostra que dá pra usar dados simples pra gerar recomendações.
+
+Mesmo sem um modelo complexo, já é possível simular um sistema que ajuda na tomada de decisão no varejo.
